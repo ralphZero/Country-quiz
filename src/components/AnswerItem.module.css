@@ -1,0 +1,28 @@
+.container{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 8px 12px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    color:  #6066d0e0;
+    border: 2px solid #6066d0e0;
+    border-radius: 12px;
+    transition: background-color 330ms ease-in-out;
+    transition: border 300ms ease-in-out;
+    animation: pulse 0.3s linear 1;
+    margin: 10px 0;
+}
+.container:hover{
+    background: #F9A826;
+    border: 2px solid#F9A826;
+    color: #ffffff;
+    user-select: none;
+    cursor: pointer;
+}
+
+@keyframes pulse{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+}
