@@ -12,6 +12,7 @@ const QuestionItem = ({ data, onCompleted, onNext }) => {
         for (let i = 0; i < children.length; i++) {
             let child = children[i];
             child.classList.add('no-hover');
+            child.classList.remove('show')
         }
 
         if(id === parseInt(data.answer)){
@@ -43,7 +44,7 @@ const QuestionItem = ({ data, onCompleted, onNext }) => {
         let children = target.parentElement.previousSibling.children;
         for(let i = 0; i < children.length; i++){
             let child = children[i];
-            child.classList.remove('no-hover','is-good','is-bad');
+            child.classList.remove('no-hover','is-good','is-bad', 'show');
             child.style.display = 'none';
         }
         onNext();
@@ -51,6 +52,7 @@ const QuestionItem = ({ data, onCompleted, onNext }) => {
         for(let i = 0; i < children.length; i++){
             let child = children[i];
             child.style.display = 'flex';
+            child.classList.add('show');
         }
     }
 

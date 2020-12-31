@@ -50,3 +50,11 @@ footer{
   border: 2px solid#EA8282 !important;
   color: #ffffff !important;
 }
+.show{
+  animation: pulse 0.3s linear 1;
+}
+
+@keyframes pulse{
+  25%  {transform: scale(0.9);}
+  75%  {transform: scale(1.1);}
+}

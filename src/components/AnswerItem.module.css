@@ -11,9 +11,7 @@
     border-radius: 12px;
     transition: background-color 330ms ease-in-out;
     transition: border 300ms ease-in-out;
-    animation: pulse 0.3s linear 1;
     margin: 10px 0;
-    transition: display 330ms ease-in;
 }
 .container:hover{
     background: #F9A826;
@@ -21,9 +19,4 @@
     color: #ffffff;
     user-select: none;
     cursor: pointer;
-}
-
-@keyframes pulse{
-    25%  {transform: scale(0.9);}
-    75%  {transform: scale(1.1);}
 }
