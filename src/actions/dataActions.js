@@ -11,3 +11,14 @@ export const updateStarted = (value) => {
         value : value
     }
 }
+
+export const generateQuestion = () => {
+    return {
+        type : 'GENERATE_QUESTION'
+    }
+}
+export const updateScore = () => {
+    return {
+        type : 'UPDATE_SCORE'
+    }
+}

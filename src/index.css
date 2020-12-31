@@ -37,3 +37,16 @@ footer{
   display: flex;
   justify-content: center;
 }
+.no-hover{
+  pointer-events: none;
+}
+.is-good{
+  background: #60BF88 !important;
+  border: 2px solid#60BF88 !important;
+  color: #ffffff !important;
+}
+.is-bad{
+  background: #EA8282 !important;
+  border: 2px solid#EA8282 !important;
+  color: #ffffff !important;
+}

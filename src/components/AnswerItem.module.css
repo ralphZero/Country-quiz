@@ -13,6 +13,7 @@
     transition: border 300ms ease-in-out;
     animation: pulse 0.3s linear 1;
     margin: 10px 0;
+    transition: display 330ms ease-in;
 }
 .container:hover{
     background: #F9A826;

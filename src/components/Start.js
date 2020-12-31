@@ -10,7 +10,7 @@ const Start = ({ onStart }) => {
         img.classList.add(sheet.logoSlide);
         btn.classList.add(sheet.btnFade);
         setTimeout(() => {
-            onStart(true);
+            onStart(1);
         }, 1500);
     }
 
