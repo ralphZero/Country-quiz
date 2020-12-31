@@ -17,7 +17,7 @@ const Result = ({ result ,onRestart }) => {
     }
     
     return (
-        <div className={sheet.flexContainer}>
+        <div className={sheet.flexContainer+' show'}>
             <img src={winners} alt="logo"/>
             <h1 className={sheet.result}>Results</h1>
             <div className={sheet.resultText}>
