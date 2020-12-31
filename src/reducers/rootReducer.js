@@ -65,9 +65,16 @@ const rootReducer = (state = initState, action) => {
   if(action.type === 'UPDATE_SCORE'){
     return {
       ...state,
-      score : state.score =+ 1
+      score : action.score
     }
   }
+  if(action.type === 'RESET_SCORE'){
+    return {
+      ...state,
+      score : action.score
+    }
+  }
+
   return state;
 }
 

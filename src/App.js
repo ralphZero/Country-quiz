@@ -4,7 +4,8 @@ import Start from "./components/Start";
 import bg from './background.png';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { addData, updateStarted, generateQuestion } from './actions/dataActions';
+import { addData, updateStarted, generateQuestion, resetScore } from './actions/dataActions';
+import Result from "./components/Result";
 
 class App extends Component {
 
@@ -27,7 +28,10 @@ class App extends Component {
 
   handleOnStart = (val) => {
     this.props.changeStatus(val);
-    console.log(this.props);
+  }
+
+  handleRestart = () => {
+    this.props.resetQuiz(0, 1);
   }
 
   render() {
@@ -37,7 +41,7 @@ class App extends Component {
       this.props.started === 0 ? (
       <Start onStart={this.handleOnStart} /> ) 
       : (
-        <h1>Result</h1>
+        <Result result={this.props.score} onRestart={this.handleRestart} />
       )
     );
 
@@ -59,7 +63,8 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     started : state.started,
-    currQuestion : state.currQuestion
+    currQuestion : state.currQuestion,
+    score : state.score
   }    
 }
 
@@ -78,6 +83,14 @@ const mapDispatchToProps = (dispatch) => {
         updateStarted(value)
       )
     },
+    resetQuiz : (value, status) => {
+      dispatch(
+        resetScore(value, status)
+      );
+      dispatch(
+        updateStarted(status)
+      )
+    }
   }
 }
 

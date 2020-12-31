@@ -10,7 +10,9 @@ class Question extends Component {
     handleCompleted = (message) => {
         if(message === 'success'){
             //success load next question
-            this.props.updateScore();
+            let score = this.props.score;
+            let newScore = parseInt(score) + 1;
+            this.props.updateScore(newScore);
         }else{
             //failed we stop ad show result
             this.props.updateStatus(2);
@@ -33,9 +35,9 @@ class Question extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateScore : () => {
+        updateScore : (value) => {
             dispatch(
-                updateScore()
+                updateScore(value)
             )
         },
         updateStatus : (value) => {
@@ -53,8 +55,10 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        data : state.currQuestion
+        data : state.currQuestion,
+        score : state.score
     }
 }
 

@@ -17,8 +17,16 @@ export const generateQuestion = () => {
         type : 'GENERATE_QUESTION'
     }
 }
-export const updateScore = () => {
+export const updateScore = (score) => {
     return {
-        type : 'UPDATE_SCORE'
+        type : 'UPDATE_SCORE',
+        score : score
+    }
+}
+
+export const resetScore = (value) => {
+    return {
+        type : 'RESET_SCORE',
+        score : value
     }
 }
