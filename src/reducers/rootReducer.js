@@ -19,6 +19,7 @@ function shuffle(array){
 
 function generateRandomArray(state){
     let data = [];
+    console.log(state);
     let a = [...state.data];
     for (let i = 0; i < 5; i++) {
       let num = Math.floor(Math.random() * a.length - 5);

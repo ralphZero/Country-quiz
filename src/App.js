@@ -17,7 +17,7 @@ class App extends Component {
     };
 
     if(localStorage.getItem('data') === null){
-      axios.get('https://restcountries.eu/rest/v2/all?fields=name;capital;flag').then((value) => {
+      axios.get('https://restcountries.com/v2/all?fields=name,capital,flag').then((value) => {
         localStorage.setItem('data', JSON.stringify(value.data));
       });
       this.props.addData(JSON.parse(localStorage.getItem('data')));
